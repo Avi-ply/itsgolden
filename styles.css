@@ -1,4 +1,4 @@
-
+/*
 #parade{
     background-color: #f5dfe2;
     width: 25%;
@@ -7,7 +7,7 @@
     font-size: 15px;
     margin: auto;
 }
-/* From Uiverse.io by MuhammadHasann */ 
+
 button {
     position: relative;
     padding: 12px 35px;
@@ -914,12 +914,12 @@ button {
   }
   
   
-  /*Text*/
+  
   .title {
     font-size: 1.3rem;
     font-weight: bold;
   }
-  /*Text divider*/
+  
   .title::after {
     content: "";
     display: block;
@@ -931,7 +931,7 @@ button {
   }
   
   
-  /*Hover*/
+  
   .memoria1:hover {
     background-color: #1b1b1b25;
   }
@@ -989,12 +989,11 @@ button {
   }
   
   
-  /*Text*/
+  
   .title {
     font-size: 1.3rem;
     font-weight: bold;
   }
-  /*Text divider*/
   .title::after {
     content: "";
     display: block;
@@ -1006,7 +1005,7 @@ button {
   }
   
   
-  /*Hover*/
+  
   .memoria2:hover {
     background-color: #1b1b1b25;
   }
@@ -1030,7 +1029,7 @@ button {
     align-items: center;
     height: 25vh;
   }
-  /* */
+  
   .memoria3 {
     top: 400px;
     margin: auto;
@@ -1064,12 +1063,12 @@ button {
   }
   
   
-  /*Text*/
+
   .title {
     font-size: 1.3rem;
     font-weight: bold;
   }
-  /*Text divider*/
+
   .title::after {
     content: "";
     display: block;
@@ -1081,7 +1080,7 @@ button {
   }
   
   
-  /*Hover*/
+  
   .memoria3:hover {
     background-color: #1b1b1b25;
   }
@@ -1138,12 +1137,11 @@ button {
 }
 
 
-/*Text*/
 .title {
   font-size: 1.3rem;
   font-weight: bold;
 }
-/*Text divider*/
+
 .title::after {
   content: "";
   display: block;
@@ -1155,7 +1153,7 @@ button {
 }
 
 
-/*Hover*/
+
 .memoria4:hover {
   background-color: #1b1b1b25;
 }
@@ -1181,7 +1179,7 @@ button {
 }
 
 
-/* */
+
 .memoria5 {
     top: 450px;
   margin: auto;
@@ -1215,12 +1213,12 @@ button {
 }
 
 
-/*Text*/
+
 .title {
   font-size: 1.3rem;
   font-weight: bold;
 }
-/*Text divider*/
+
 .title::after {
   content: "";
   display: block;
@@ -1232,7 +1230,7 @@ button {
 }
 
 
-/*Hover*/
+
 .memoria5:hover {
   background-color: #1b1b1b25;
 }
@@ -1257,7 +1255,7 @@ button {
   height: 25vh;
 }
 
-/* */
+
 .memoria6{
 top: 450px;
   margin: auto;
@@ -1291,12 +1289,11 @@ top: 450px;
 }
 
 
-/*Text*/
 .title {
   font-size: 1.3rem;
   font-weight: bold;
 }
-/*Text divider*/
+
 .title::after {
   content: "";
   display: block;
@@ -1307,8 +1304,6 @@ top: 450px;
   background-color: #1b1b1b;
 }
 
-
-/*Hover*/
 .memoria6:hover {
   background-color: #1b1b1b25;
 }
@@ -1365,13 +1360,13 @@ top: 450px;
     transition: transform 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
   }
   
+
   
-  /*Text*/
   .title {
     font-size: 1.3rem;
     font-weight: bold;
   }
-  /*Text divider*/
+  
   .title::after {
     content: "";
     display: block;
@@ -1383,7 +1378,7 @@ top: 450px;
   }
   
   
-  /*Hover*/
+  
   .memoria7:hover {
     background-color: #1b1b1b25;
   }
@@ -1432,11 +1427,7 @@ top: 450px;
     animation: slide 180s linear infinite;
   }
   
-  .slider-text span {
-    padding-right: 50px; /* Espacio entre frases */
-    font-family: 'Karla' sans-serif;
 
-  }
   
   @keyframes slide {
     from {
@@ -1448,7 +1439,7 @@ top: 450px;
   }
 
   
-/* SEGUNDO SLIDER */
+
 #text-slider-container {
     position: relative;
     top: 1000px;
@@ -1472,10 +1463,7 @@ top: 450px;
     animation: slide-right 180s linear infinite;
   }
   
-  #text-slider p {
-    padding-right: 50px; /* Espacio entre frases */
-    font-family: 'Karla' sans-serif;
-  }
+
   
   @keyframes slide-right {
     from {
@@ -1666,7 +1654,7 @@ button {
   .fil0 {
     fill: #fffdef;
   }
-  /* From Uiverse.io by Efrain2112 */ 
+  
 body {
   background-color: #e5e5f7;
   opacity: 1;
@@ -1720,11 +1708,8 @@ header{
   .slider-img img {
     width: 300px;
     height: 300px;
-    padding-right: 80px; /* Espacio entre frases */
-    font-family: 'Karla' sans-serif;
-    border-radius: 30px;
+    padding-right: 80px; /* Espacio entre frases 
 
-  }
   
   @keyframes slide {
     from {
@@ -1733,4 +1718,58 @@ header{
     to {
         transform: translateX(-100%);
     }
+  }
+
+  */ 
+
+  body {
+    background: black;
+    color: white;
+    font-family: 'Bevellier', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;   
+  }
+
+  audio {
+    margin-bottom: 40px;
+  }
+
+  .lyrics-container {
+    height: 120px;
+    width: 80%;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+  }
+
+  .lyrics-list {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s ease;
+  }
+
+  .line {
+    opacity: 0.3;
+    filter: blur(2px);
+    font-size: 20px;
+    transition: all 0.5s ease;
+    padding: 5px 0;
+  }
+
+  .line.active {
+    opacity: 1;
+    filter: blur(0);
+    font-size: 26px;
+    font-weight: bold;
+  }
+
+  .line.prev,
+  .line.text {
+    opacity: 0.6;
+    filter: blur(1px);
+    font-size: 22px;
   }
