@@ -1774,7 +1774,7 @@ header{
     font-size: 22px;
   }
 
-  /* From Uiverse.io by boryanakrasteva */ 
+
 .btn {
   display: flex;
   align-items: center;
@@ -1785,7 +1785,10 @@ header{
   cursor: pointer;
   border: none;
   background-color: transparent;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .btn::after {
