@@ -1722,6 +1722,14 @@ header{
 
   */ 
 
+  @font-face {
+    font-family: 'Zodiak';
+    src: url('/fonts/Zodiak-Light.otf') format(opentype);
+    font-weight: 300;
+    font-style: normal;
+  }
+
+
   body {
     background: black;
     color: white;
@@ -1744,6 +1752,9 @@ header{
     overflow: hidden;
     position: relative;
     text-align: center;
+    font-family: 'Zodiak';
+    font-weight: 300;
+
   }
 
   .lyrics-list {
