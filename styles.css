@@ -1725,7 +1725,9 @@ header{
   body {
     background: black;
     color: white;
-    font-family: 'Bevellier', sans-serif;
+    font-family: 'Zodiak', sans-serif;
+    font-style: Light;
+    letter-spacing: 2px;
     display: flex;
     flex-direction: column;
     align-items: center;
