@@ -1847,6 +1847,35 @@ header{
   padding-bottom: 140px;
 }
 
+
+.gradient-text {
+  background: linear-gradient(90deg, #ffb6c1, #ff69b4, #ff1493, #ff69b4, #ffb6c1);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 6s linear infinite, glowPulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 182, 193, 0.4),
+                 0 0 10px rgba(255, 105, 180, 0.3),
+                 0 0 20px rgba(255, 20, 147, 0.2);
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(255, 182, 193, 0.8),
+                 0 0 30px rgba(255, 105, 180, 0.6),
+                 0 0 45px rgba(255, 20, 147, 0.4);
+  }
+}
+
+
+
 #waitv1 {
   font-family: 'Zodiak', sans-serif;
   font-style: italic;
