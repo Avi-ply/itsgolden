@@ -1747,8 +1747,8 @@ header{
   }
 
   .lyrics-container {
-    height: 150px;
-    width: 80%;
+    height: 160px;
+    width: 85%;
     overflow: hidden;
     position: relative;
     text-align: center;
@@ -1825,22 +1825,45 @@ header{
 
 .icon path {
   fill: white;
-  transition: 0.2s linear;
+  animation: pulseColor 1.6s ease-in-out infinite;
 }
 
-.btn:hover > .icon {
-  transform: scale(1.2);
+.icon {
+  width: 30px;
+  height: 30px;
+  animation: pulseIcon 1.6s ease-in-out infinite;
 }
 
-.btn:hover > .icon path {
-  fill: rgb(177, 139, 189);
+@keyframes pulseColor {
+  0%, 100% { 
+    fill: white;
+  }
+
+  50% {
+    fill: rgb(177, 139, 189);
+  }
 }
 
-.btn:hover::after {
-  visibility: visible;
-  opacity: 1;
-  top: 105%;
+
+.arrow-up {
+  position: absolute;
+  top: calc(50% + 25px);
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+  color: #fff;
+  opacity: 0.5;
+  animation: bounceUp 1.5s infinite ease-in-out;
 }
+
+@keyframes bounceUp {
+  0%, 100% {
+    transform: translateX(-50%) rotate(180deg) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) rotate(180deg) translateY(-4px);
+  }
+}
+
 
 .wait {
   text-align: center;
