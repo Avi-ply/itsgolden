@@ -1,13 +1,11 @@
-
-  @font-face {
+@font-face {
     font-family: 'Zodiak';
-    src: url('/fonts/Zodiak-Light.otf') format(opentype);
+    src: url('/fonts/Zodiak-Light.otf') format('opentype');
     font-weight: 300;
     font-style: normal;
-  }
+}
 
-
-  body {
+body {
     background: black;
     color: white;
     font-family: 'Bevellier', sans-serif;
@@ -16,171 +14,159 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    margin: 0;   
-  }
+    margin: 0;
+}
 
-  audio {
+audio {
     margin-bottom: 40px;
-  }
+}
 
-  .lyrics-container {
-    height: 160px;
+.lyrics-container {
+    height: 180px;
     width: 85%;
     overflow: hidden;
     position: relative;
     text-align: center;
     font-family: 'Recia', serif;
     font-weight: 300;
+}
 
-  }
-
-  .lyrics-list {
+.lyrics-list {
     display: flex;
     flex-direction: column;
     transition: transform 0.5s ease;
-  }
+}
 
-  .line {
+.line {
     opacity: 0.3;
     filter: blur(2px);
     font-size: 20px;
-    transition: all 0.5s ease;
-    padding: 5px 0;
-  }
+    font-weight: normal;
+    color: #eee;
+    text-align: center;
+    margin-bottom: 10px;
+    line-height: 1.5em;
+}
 
-  .line.active {
+.line.active {
     opacity: 1;
     filter: blur(0);
     font-size: 26px;
     font-weight: bold;
-  }
+}
 
-  .line.prev,
-  .line.text {
+.line.prev,
+.line.next {
     opacity: 0.6;
     filter: blur(1px);
     font-size: 22px;
-  }
-
+}
 
 .btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .btn::after {
-  content: "";
-  width: fit-content;
-  height: fit-content;
-  position: absolute;
-  font-size: 15px;
-  color: white;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.2s linear;
-  top: 115%;
+    content: "";
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    font-size: 15px;
+    color: white;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s linear;
+    top: 115%;
 }
 
 .icon {
-  width: 30px;
-  height: 30px;
-  transition: 0.2s linear;
+    width: 30px;
+    height: 30px;
+    transition: 0.2s linear;
 }
 
 .icon path {
-  fill: white;
-  animation: pulseColor 1.6s ease-in-out infinite;
-}
-
-.icon {
-  width: 30px;
-  height: 30px;
-  animation: pulseIcon 1.6s ease-in-out infinite;
+    fill: white;
+    animation: pulseColor 1.6s ease-in-out infinite;
 }
 
 @keyframes pulseColor {
-  0%, 100% { 
-    fill: white;
-  }
-
-  50% {
-    fill: rgb(177, 139, 189);
-  }
+    0%, 100% {
+        fill: white;
+    }
+    50% {
+        fill: rgb(177, 139, 189);
+    }
 }
 
-
 .arrow-up {
-  position: absolute;
-  top: calc(50% + 25px);
-  left: 50%;
-  transform: translateX(-50%) rotate(180deg);
-  color: #fff;
-  opacity: 0.5;
-  animation: bounceUp 1.5s infinite ease-in-out;
+    position: absolute;
+    top: calc(50% + 25px);
+    left: 50%;
+    transform: translateX(-50%) rotate(180deg);
+    color: #fff;
+    opacity: 0.5;
+    animation: bounceUp 1.5s infinite ease-in-out;
 }
 
 @keyframes bounceUp {
-  0%, 100% {
-    transform: translateX(-50%) rotate(180deg) translateY(0);
-  }
-  50% {
-    transform: translateX(-50%) rotate(180deg) translateY(-4px);
-  }
+    0%, 100% {
+        transform: translateX(-50%) rotate(180deg) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) rotate(180deg) translateY(-4px);
+    }
 }
-
 
 .wait {
-  text-align: center;
-  padding-bottom: 140px;
+    text-align: center;
+    padding-bottom: 140px;
 }
 
-
-.gradient-text {
-  background: linear-gradient(90deg, #ffb6c1, #ff69b4, #ff1493, #ff69b4, #ffb6c1);
-  background-size: 300% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientMove 6s linear infinite, glowPulse 1.5s ease-in-out infinite alternate;
+.line.gradient-text {
+    background: linear-gradient(90deg, #ffb6c1, #ff69b4, #ff1493, #ff69b4, #ffb6c1);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 6s linear infinite, glowPulse 1.5s ease-in-out infinite alternate;
 }
 
 @keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+    0% { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
 }
 
 @keyframes glowPulse {
-  0% {
-    text-shadow: 0 0 5px rgba(255, 182, 193, 0.4),
-                 0 0 10px rgba(255, 105, 180, 0.3),
-                 0 0 20px rgba(255, 20, 147, 0.2);
-  }
-  100% {
-    text-shadow: 0 0 15px rgba(255, 182, 193, 0.8),
-                 0 0 30px rgba(255, 105, 180, 0.6),
-                 0 0 45px rgba(255, 20, 147, 0.4);
-  }
+    0% {
+        text-shadow: 0 0 5px rgba(255, 182, 193, 0.4),
+                     0 0 10px rgba(255, 105, 180, 0.3),
+                     0 0 20px rgba(255, 20, 147, 0.2);
+    }
+    100% {
+        text-shadow: 0 0 15px rgba(255, 182, 193, 0.8),
+                     0 0 30px rgba(255, 105, 180, 0.6),
+                     0 0 45px rgba(255, 20, 147, 0.4);
+    }
 }
 
-
-
 #waitv1 {
-  font-family: 'Zodiak', sans-serif;
-  font-style: italic;
+    font-family: 'Zodiak', sans-serif;
+    font-style: italic;
 }
 
 #tswift {
-  font-family: 'Zodiak', sans-serif;
+    font-family: 'Zodiak', sans-serif;
 }
