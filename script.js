@@ -80,7 +80,6 @@ const gradientLinesText = [
     "And it was enchanting to meet you",
     "All I know is I was enchanted to meet you",
     "Hey, it was enchanting to meet you",
-    "My thoughts will echo your name"
 ];
 
 let lineElements = [];
@@ -123,51 +122,33 @@ audio.addEventListener("timeupdate", () => {
         if (currentActiveLineIndex !== -1 && lineElements[currentActiveLineIndex]) {
             gsap.to(lineElements[currentActiveLineIndex], {
                 opacity: 0,
-                y: 10,
-                duration: 1.2,
+                y: -10,
+                duration: 1.0,
                 ease: "sine.inOut"
             });
         }
 
         if (newActiveLineIndex !== -1 && lineElements[newActiveLineIndex]) {
             const newActiveLineElement = lineElements[newActiveLineIndex];
-            gsap.set(newActiveLineElement, { clearProps: "transform,opacity,filter,font-size,font-weight" });
+            gsap.set(newActiveLineElement, { 
+                clipPath: "inset(0 100% 0 0)",
+                opacity: 0,
+                scale: 0.95
+            });
 
-            const randomAnimationType = gsap.utils.random(["softFade", "gentleSlide", "subtleLift", "elegantGlow"]);
-            const duration = gsap.utils.random(1.0, 1.5);
-            const ease = "sine.inOut";
-
-            switch (randomAnimationType) {
-                case "softFade":
-                    gsap.fromTo(newActiveLineElement,
-                        { opacity: 0 },
-                        { opacity: 1, duration: duration, ease: ease }
-                    );
-                    break;
-                case "gentleSlide":
-                    gsap.fromTo(newActiveLineElement,
-                        { opacity: 0, x: 20 },
-                        { opacity: 1, x: 0, duration: duration, ease: ease }
-                    );
-                    break;
-                case "subtleLift":
-                    gsap.fromTo(newActiveLineElement,
-                        { opacity: 0, y: 15 },
-                        { opacity: 1, y: 0, duration: duration, ease: ease }
-                    );
-                    break;
-                case "elegantGlow":
-                    gsap.fromTo(newActiveLineElement,
-                        { opacity: 0, textShadow: "0 0 0 rgba(255, 182, 193, 0)" },
-                        { opacity: 1, textShadow: "0 0 8px rgba(255, 182, 193, 0.5)", duration: duration, ease: ease }
-                    );
-                    break;
-            }
+            gsap.to(newActiveLineElement, {
+                clipPath: "inset(0 0% 0 0)",
+                opacity: 1,
+                scale: 1,
+                textShadow: gradientLinesText.includes(newActiveLineElement.textContent.trim()) ? 
+                    "0 0 10px rgba(255, 182, 193, 0.6)" : "none",
+                duration: 2.0,
+                ease: "sine.inOut"
+            });
 
             gsap.set(newActiveLineElement, {
-                fontSize: "28px",
-                fontWeight: "bold",
-                filter: "blur(0px)"
+                fontSize: "30px",
+                fontWeight: "bold"
             });
         }
 
@@ -185,7 +166,7 @@ function updateScrollPosition() {
         if (index === currentActiveLineIndex) {
             line.classList.add("active");
         } else {
-            gsap.to(line, { opacity: 0, duration: 1.2, ease: "sine.inOut" });
+            gsap.to(line, { opacity: 0, duration: 1.0, ease: "sine.inOut" });
         }
     });
 
@@ -193,14 +174,18 @@ function updateScrollPosition() {
     const activeRect = activeLineElement.getBoundingClientRect();
     const offset = (activeLineElement.offsetTop + activeRect.height / 2) - (containerHeight / 2);
 
-    gsap.to(lyricsList, { y: -offset, duration: 1.2, ease: "sine.inOut" });
+    gsap.to(lyricsList, { y: -offset, duration: 1.0, ease: "sine.inOut" });
 }
 
 playPauseButton.addEventListener("click", () => {
     if (audio.paused) {
         audio.play();
         gsap.to(startScreen, {
-            opacity: 0, duration: 1.2, ease: "sine.inOut", onComplete: () => {
+            opacity: 0,
+            filter: "blur(5px)",
+            duration: 1.5,
+            ease: "sine.inOut",
+            onComplete: () => {
                 startScreen.style.display = "none";
             }
         });
@@ -211,14 +196,16 @@ playPauseButton.addEventListener("click", () => {
 
 audio.addEventListener("ended", () => {
     startScreen.style.display = "flex";
-    gsap.fromTo(startScreen, { opacity: 0 }, { opacity: 1, duration: 1.2, ease: "sine.inOut" });
+    gsap.fromTo(startScreen, 
+        { opacity: 0, filter: "blur(5px)" }, 
+        { opacity: 1, filter: "blur(0px)", duration: 1.5, ease: "sine.inOut" }
+    );
     currentActiveLineIndex = -1;
     lineElements.forEach(line => {
         gsap.set(line, {
             opacity: 0,
             fontSize: "20px",
-            fontWeight: "normal",
-            y: 0
+            fontWeight: "normal"
         });
     });
 });
@@ -229,7 +216,11 @@ document.addEventListener("keydown", e => {
         if (audio.paused) {
             audio.play();
             gsap.to(startScreen, {
-                opacity: 0, duration: 1.2, ease: "sine.inOut", onComplete: () => {
+                opacity: 0,
+                filter: "blur(5px)",
+                duration: 1.5,
+                ease: "sine.inOut",
+                onComplete: () => {
                     startScreen.style.display = "none";
                 }
             });
